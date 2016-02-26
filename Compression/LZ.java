@@ -87,8 +87,8 @@ public class LZ{
         
         //if no input was given through the command prompt, ask the user to enter a file name 
         if(args.length == 0){
-            System.out.print("Please enter a filename to compress.\n" + 
-                             "Files ending in \"*.myZ\" will automatically be decompressed: ");
+            System.out.print("Please enter a filename to compress to \"[FILE].myZ\".\n" + 
+                             "Files ending in \"*.myZ\" will automatically be decompressed as [FILE].myZ.unZ: ");
                                 
             Scanner sc = new Scanner(System.in);
             String path = new String(sc.next());
@@ -142,6 +142,7 @@ public class LZ{
                         
             }
     
+            System.out.println("\n\"" + file.getName() + ".myZ\" created");
             in.close();
             out.close();
         }
@@ -189,6 +190,7 @@ public class LZ{
                     out.write(list.get(index).toString());
             }
 
+            System.out.println("\n\"" + file.getName() + ".unZ\" created");
             sc.close();
             in.close();
             out.close();
