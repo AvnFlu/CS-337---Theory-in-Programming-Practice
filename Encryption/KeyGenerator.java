@@ -14,7 +14,7 @@ public class KeyGenerator
 				p = Integer.parseInt(args[0]);
 				q = Integer.parseInt(args[1]);
 			}
-			catch (NumberFormatException e){
+			catch (NumberFormatException e) {
 				System.out.println("Entered arguments are not in integer format");
 				return;
 			}
@@ -43,10 +43,10 @@ public class KeyGenerator
 
 		int n = p*q;
 		int phiN = (p-1)*(q-1);
-		int e = 67;                  // changing this will greatly increase the runtime
+		int e = 67;                  // preset public key, changing this will greatly increase the runtime
 		int d = 1;
 
-		//determine the value for d
+		//determine the value for private key, d
 		while((d*e)% phiN != 1)
 			d++;
 
@@ -64,12 +64,10 @@ public class KeyGenerator
 		System.out.println("\n\"key.txt\" created");
 	}
 	
-	public static boolean isPrime(int n)
-	{
-		for(int i = 2; i < n; i++)
-		{
-			if(n%i==0) return false;
-		}
+	public static boolean isPrime(int n) {
+		for(int i = 2; i <= n/2; i++)
+			if(n%i==0)
+				return false;
 
 		return true;
 	}

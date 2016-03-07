@@ -52,7 +52,6 @@ Temporary Items
 *.class
 *.jar
 *.html
-*.txt
 *.gif
 *.css
 Assignment1/project1/doc/package-list
@@ -60,3 +59,4 @@ Assignment1/project1/doc/package-list
 *.xml
 Assignment1/Compression/.idea/.name
 Assignment2/test~
+*.txt
